@@ -40,11 +40,11 @@ This image is a visual concept/reference for the round radar display.
 
 ### Web configuration
 
-![ARDUnia Fly Radar web configuration page](docs/images/web-setup.png.jpeg)
+![ARDUnia Fly Radar web configuration page](docs/images/web-setup.jpg)
 
 ### Device information page
 
-![ARDUnia Fly Radar device information page](docs/images/device-info.png.jpeg)
+![ARDUnia Fly Radar device information page](docs/images/device-info.jpeg)
 
 ## Hardware
 
