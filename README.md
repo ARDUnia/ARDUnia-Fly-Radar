@@ -132,9 +132,9 @@ ARDUnia-Fly-Radar/
     ├── SETUP.md
     └── images/
         ├── IMAGE-CREDITS.md
-        ├── device-info.png.jpeg
+        ├── device-info.jpg
         ├── radar-display-concept.png.jpeg
-        └── web-setup.png.jpeg
+        └── web-setup.jpg
 ```
 
 Additional guides:
