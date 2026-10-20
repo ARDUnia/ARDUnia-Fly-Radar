@@ -1,3 +1,10 @@
+[![ESP8266 Firmware CI](https://github.com/ARDUnia/ARDUnia-Fly-Radar/actions/workflows/esp8266-firmware-check.yml/badge.svg?branch=main)](https://github.com/ARDUnia/ARDUnia-Fly-Radar/actions/workflows/esp8266-firmware-check.yml)
+![Hardware Tested](https://img.shields.io/badge/Hardware%20Test-PASSED-brightgreen)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Platform: ESP8266](https://img.shields.io/badge/Platform-ESP8266-orange)
+![Display: GC9A01](https://img.shields.io/badge/Display-GC9A01%20240%C3%97240-informational)
+![Version](https://img.shields.io/badge/Version-v1.5-blue)
+
 # ARDUnia Fly Radar
 
 **A compact live-aircraft radar for ESP8266 and a 240 × 240 GC9A01 round display.**
