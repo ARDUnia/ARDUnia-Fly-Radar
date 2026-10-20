@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform: ESP8266](https://img.shields.io/badge/Platform-ESP8266-orange)
 ![Display: GC9A01](https://img.shields.io/badge/Display-GC9A01%20240%C3%97240-informational)
-![Version](https://img.shields.io/badge/Version-v1.5-blue)
+![Version](https://img.shields.io/badge/Version-v1.5.0-blue)
 
 # ARDUnia Fly Radar
 
