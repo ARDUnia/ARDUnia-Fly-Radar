@@ -2,7 +2,7 @@
 
 1. Install Arduino IDE and the ESP8266 board platform.
 2. Install ArduinoJson (compatible with the sketch's ArduinoJson 6 API), Adafruit GFX Library, and Adafruit GC9A01A.
-3. Open `ARDUnia_Fly_Radar_v1_5.ino`.
+3. Open `ARDUnia-Fly-Radar.ino`.
 4. Select your ESP8266 NodeMCU board and port, then upload.
 5. Connect to the device's setup Wi-Fi network: `ARDUnia-Fly-Radar-Setup`.
 6. Open `http://192.168.4.1`.
