@@ -1,4 +1,4 @@
-name: ESP8266 Firmware Hardware-Target Check
+name: ESP8266 Firmware Compile Check
 
 on:
   push:
@@ -39,10 +39,15 @@ jobs:
           arduino-cli lib install "Adafruit GFX Library"
           arduino-cli lib install "Adafruit GC9A01A"
 
+      - name: Verify firmware source exists
+        run: |
+          test -s ARDUnia_Fly_Radar.ino
+          grep -q 'PROJECT_VERSION = "1.6.4"' ARDUnia_Fly_Radar.ino
+
       - name: Prepare sketch folder
         run: |
           mkdir -p "$RUNNER_TEMP/ARDUnia-Fly-Radar"
-          cp ARDUnia-Fly-Radar.ino "$RUNNER_TEMP/ARDUnia-Fly-Radar/ARDUnia-Fly-Radar.ino"
+          cp ARDUnia_Fly_Radar.ino "$RUNNER_TEMP/ARDUnia-Fly-Radar/ARDUnia-Fly-Radar.ino"
 
       - name: Compile for NodeMCU ESP8266
         run: |
