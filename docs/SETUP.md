@@ -9,6 +9,8 @@
 7. Scan and select your Wi-Fi network, enter the password, and set the radar center.
 8. Save settings. The board restarts and connects using the stored configuration.
 
+For range selection, connect a momentary push button between GPIO12 (NodeMCU D6) and GND. The internal pull-up is enabled by the firmware; pressing the button cycles through 10, 20, 30, 40, 50, 100, and 500 km. The selected range is saved in EEPROM.
+
 The device needs internet access to retrieve aircraft data. City-name lookup also needs internet access. You can use latitude/longitude instead if the lookup service is unavailable.
 
 ## Important security note
