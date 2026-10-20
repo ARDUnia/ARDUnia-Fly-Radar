@@ -3,22 +3,26 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform: ESP8266](https://img.shields.io/badge/Platform-ESP8266-orange)
 ![Display: GC9A01](https://img.shields.io/badge/Display-GC9A01%20240%C3%97240-informational)
-![Version](https://img.shields.io/badge/Version-v1.5.0-blue)
+![Version](https://img.shields.io/badge/Version-v1.6.4-blue)
 
 # ARDUnia Fly Radar
 
-**A compact live-aircraft radar for ESP8266 and a 240 × 240 GC9A01 round display.**
+**A compact live-aircraft radar for ESP8266 and a 240 × 240 GC9A01 round display, with selectable radar range and adaptive aircraft labels.**
 
-ARDUnia Fly Radar retrieves nearby aircraft positions from the ADS-B data service and plots aircraft within a 40-nautical-mile radius around a configurable location. A built-in web interface lets you configure Wi-Fi and the radar center from a phone or computer.
+ARDUnia Fly Radar retrieves nearby aircraft positions from the ADS-B data service and plots aircraft around a configurable location with selectable radar ranges from 10 km to 500 km (the upstream API limits the requested distance to 250 nautical miles). A built-in web interface lets you configure Wi-Fi and the radar center from a phone or computer.
 
-> **Current release:** v1.5  
+> **Current release:** v1.6.4  
 > **Platform:** ESP8266 / NodeMCU  
 > **Display:** GC9A01, 240 × 240, round TFT
 
 ## Features
 
 - Circular radar view with range rings, cardinal directions, aircraft markers, and heading indicators when track data is available.
-- 40 NM radar radius, refreshed approximately every 15 seconds.
+- Seven selectable radar ranges: 10, 20, 30, 40, 50, 100, and 500 km.
+- Physical range button on GPIO12 (D6), with the selected range saved in EEPROM.
+- Current aircraft count centered at the bottom of the display.
+- Adaptive aircraft labels: labels are shown for up to 20 aircraft in range and hidden when traffic is denser.
+- Aircraft data refreshed approximately every 15 seconds.
 - First-run Wi-Fi setup access point and browser-based configuration page.
 - Nearby Wi-Fi network scanning and selection from the setup page.
 - Radar center configuration by latitude/longitude or by city name.
@@ -50,7 +54,7 @@ This image is a visual concept/reference for the round radar display.
 
 ### Display wiring
 
-The sketch uses **GPIO numbers**, not NodeMCU `D` labels.
+The sketch uses **GPIO numbers**, not NodeMCU `D` labels. The range-selection button is connected between GPIO12 (D6) and GND; the firmware enables the internal pull-up.
 
 | GC9A01 signal | ESP8266 GPIO |
 |---|---:|
@@ -61,6 +65,10 @@ The sketch uses **GPIO numbers**, not NodeMCU `D` labels.
 | MOSI / SDA | Hardware SPI MOSI (GPIO13 on standard NodeMCU) |
 | VCC | According to the display module specification |
 | GND | GND |
+
+### Range button
+
+Connect a momentary push button between **GPIO12 (NodeMCU D6)** and **GND**. The input uses `INPUT_PULLUP`, so no external pull-up resistor is required. Pressing the button cycles through the seven range values. The selected value is stored in EEPROM.
 
 The display's SPI clock and MOSI are provided by the ESP8266 hardware SPI interface. Do not connect the display's MISO unless your particular module requires it. Check your board and display-module pin labels before powering the circuit.
 
@@ -102,7 +110,9 @@ The initial configuration access point is open and the sketch uses `WiFiClientSe
 
 ## Configuration and operation
 
-- **Radar radius:** 40 nautical miles (`RADAR_RANGE_NM` and API distance path).
+- **Radar range:** selected in kilometres from 10, 20, 30, 40, 50, 100, or 500 km; the setting persists in EEPROM.
+- **API distance cap:** requests are capped at 250 nautical miles by the firmware/upstream service limit, so the 500 km display option may not cover a full 500 km radius of source data.
+- **Range button:** GPIO12 (D6), active-low to GND.
 - **Refresh interval:** 15 seconds (`UPDATE_INTERVAL`).
 - **Radar center:** saved latitude and longitude.
 - **Wi-Fi:** credentials stored in EEPROM.
@@ -131,6 +141,16 @@ Additional guides:
 - [Hardware notes](docs/HARDWARE.md)
 - [Setup guide](docs/SETUP.md)
 - [Image credits and descriptions](docs/images/IMAGE-CREDITS.md)
+
+## Version 1.6.4 highlights
+
+- Adds seven selectable radar ranges and a physical range-selection button.
+- Persists the selected range across restarts.
+- Displays the aircraft count in a centered status area.
+- Hides aircraft labels automatically when more than 20 aircraft are within the selected range to reduce clutter.
+- Keeps the existing ESP8266 + GC9A01 hardware platform and web-based Wi-Fi/location setup.
+
+Hardware testing was performed by the project maintainer and reported as successful. This release documentation does not claim an independently reproduced hardware test or a successful firmware compilation unless a CI result is available.
 
 ## Troubleshooting
 
