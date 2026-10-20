@@ -1,0 +1,16 @@
+# Arduino IDE / CLI build artifacts
+build/
+.arduino/
+*.elf
+*.hex
+*.bin
+*.map
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local serial monitor / temporary logs
+*.log
