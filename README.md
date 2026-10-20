@@ -107,6 +107,7 @@ Change these constants only if you understand the effects on display scaling, AP
 ```text
 ARDUnia-Fly-Radar/
 ├── ARDUnia_Fly_Radar_v1_5.ino
+├── LICENSE
 ├── README.md
 └── docs/
     ├── HARDWARE.md
@@ -125,15 +126,23 @@ ARDUnia-Fly-Radar/
 - **Display is blank or corrupted:** recheck CS/DC/RST wiring, hardware SPI clock/MOSI, power, and the selected board.
 - **Compilation fails on ArduinoJson:** install a version compatible with the ArduinoJson 6 API used by this sketch.
 
-## Credits
+## Author and project links
 
 Created by **Hamidreza Milaninia** for **ARDUnia**.
 
-- GitHub: [github.com/ardunia](https://github.com/ardunia)
-- Website: [ardunia.ir](https://ardunia.ir)
+- **ARDUnia projects and documentation:** [ardunia.ir](https://ardunia.ir)
+- **Personal / professional website:** [hrmnia.com](https://hrmnia.com)
+- **GitHub organization:** [github.com/ardunia](https://github.com/ardunia)
+- **Project repository:** [ARDUnia-Fly-Radar](https://github.com/ARDUnia/ARDUnia-Fly-Radar)
 
 Aircraft and geocoding data are provided by third-party services. This project is an independent hobby/learning project and is not affiliated with or endorsed by those services.
 
+## Hardware safety and liability disclaimer
+
+This project is provided **“as is”** for educational and experimental use. Building, wiring, modifying, or operating electronic hardware may cause damage to the board, display, other components, connected equipment, or property, and may cause injury. **The author accepts no responsibility for hardware damage, component failure, wiring mistakes, power-supply issues, or other losses resulting from assembling, modifying, or using this project. You build and use the hardware at your own risk.**
+
+Before applying power, verify all pin connections, voltage levels, current requirements, polarity, and the specifications of your particular ESP8266 board and display module. Do not assume that every module sold under the same name has identical electrical requirements.
+
 ## License
 
-No license has been specified in this repository yet. Unless a license is added, the default copyright rules apply and reuse, redistribution, and modification are not automatically granted.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for the full license text.
