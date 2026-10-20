@@ -72,7 +72,7 @@ The following are provided by the ESP8266 Arduino core and do not need separate 
 ## Getting started
 
 1. Install the ESP8266 board package and the libraries listed above.
-2. Open `ARDUnia_Fly_Radar_v1_5.ino` in Arduino IDE.
+2. Open `ARDUnia-Fly-Radar.ino` in Arduino IDE.
 3. Select the correct ESP8266 board and serial port.
 4. Upload the sketch.
 5. On first setup, connect a phone or computer to the Wi-Fi access point named **`ARDUnia-Fly-Radar-Setup`**.
@@ -106,17 +106,24 @@ Change these constants only if you understand the effects on display scaling, AP
 
 ```text
 ARDUnia-Fly-Radar/
-├── ARDUnia_Fly_Radar_v1_5.ino
+├── .gitignore
+├── ARDUnia-Fly-Radar.ino
 ├── LICENSE
 ├── README.md
 └── docs/
     ├── HARDWARE.md
     ├── SETUP.md
     └── images/
+        ├── IMAGE-CREDITS.md
         ├── device-info.png.jpeg
         ├── radar-display-concept.png.jpeg
         └── web-setup.png.jpeg
 ```
+
+Additional guides:
+- [Hardware notes](docs/HARDWARE.md)
+- [Setup guide](docs/SETUP.md)
+- [Image credits and descriptions](docs/images/IMAGE-CREDITS.md)
 
 ## Troubleshooting
 
