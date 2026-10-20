@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform: ESP8266](https://img.shields.io/badge/Platform-ESP8266-orange)
 ![Display: GC9A01](https://img.shields.io/badge/Display-GC9A01%20240%C3%97240-informational)
-![Version](https://img.shields.io/badge/Version-v1.6.4-blue)
+![Version](https://img.shields.io/badge/Prepared%20Firmware-v1.6.4-orange)
 
 # ARDUnia Fly Radar
 
@@ -11,7 +11,7 @@
 
 ARDUnia Fly Radar retrieves nearby aircraft positions from the ADS-B data service and plots aircraft around a configurable location with selectable radar ranges from 10 km to 500 km (the upstream API limits the requested distance to 250 nautical miles). A built-in web interface lets you configure Wi-Fi and the radar center from a phone or computer.
 
-> **Current release:** v1.6.4  
+> **Prepared firmware:** v1.6.4 — publication pending  
 > **Platform:** ESP8266 / NodeMCU  
 > **Display:** GC9A01, 240 × 240, round TFT
 
@@ -150,7 +150,7 @@ Additional guides:
 - Hides aircraft labels automatically when more than 20 aircraft are within the selected range to reduce clutter.
 - Keeps the existing ESP8266 + GC9A01 hardware platform and web-based Wi-Fi/location setup.
 
-Hardware testing was performed by the project maintainer and reported as successful. This release documentation does not claim an independently reproduced hardware test or a successful firmware compilation unless a CI result is available.
+The project maintainer reports that the v1.6.4 firmware was tested successfully on the physical hardware. **The v1.6.4 source file and formal GitHub Release still need to be published**; until then, this repository’s default-branch firmware remains the previously published version. No fresh firmware compilation is claimed here.
 
 ## Troubleshooting
 
