@@ -1,0 +1,47 @@
+name: ESP8266 Firmware Hardware-Target Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile-esp8266-firmware:
+    name: Compile for NodeMCU ESP8266
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Update Arduino indexes
+        run: arduino-cli core update-index
+
+      - name: Install ESP8266 board platform
+        run: arduino-cli core install esp8266:esp8266
+
+      - name: Install firmware libraries
+        run: |
+          arduino-cli lib install "ArduinoJson@6.21.5"
+          arduino-cli lib install "Adafruit GFX Library"
+          arduino-cli lib install "Adafruit GC9A01A"
+
+      - name: Prepare sketch folder
+        run: |
+          mkdir -p "$RUNNER_TEMP/ARDUnia-Fly-Radar"
+          cp ARDUnia-Fly-Radar.ino "$RUNNER_TEMP/ARDUnia-Fly-Radar/ARDUnia-Fly-Radar.ino"
+
+      - name: Compile for NodeMCU ESP8266
+        run: |
+          arduino-cli compile \
+            --fqbn esp8266:esp8266:nodemcuv2 \
+            --warnings all \
+            "$RUNNER_TEMP/ARDUnia-Fly-Radar"
