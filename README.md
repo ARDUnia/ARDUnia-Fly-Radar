@@ -44,7 +44,7 @@ This image is a visual concept/reference for the round radar display.
 
 ### Device information page
 
-![ARDUnia Fly Radar device information page](docs/images/device-info.jpeg)
+![ARDUnia Fly Radar device information page](docs/images/device-info.jpg)
 
 ## Hardware
 
