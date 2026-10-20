@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform: ESP8266](https://img.shields.io/badge/Platform-ESP8266-orange)
 ![Display: GC9A01](https://img.shields.io/badge/Display-GC9A01%20240%C3%97240-informational)
-![Version](https://img.shields.io/badge/Prepared%20Firmware-v1.6.4-orange)
+[![Latest Release](https://img.shields.io/github/v/release/ARDUnia/ARDUnia-Fly-Radar)](https://github.com/ARDUnia/ARDUnia-Fly-Radar/releases/latest)
 
 # ARDUnia Fly Radar
 
@@ -11,7 +11,7 @@
 
 ARDUnia Fly Radar retrieves nearby aircraft positions from the ADS-B data service and plots aircraft around a configurable location with selectable radar ranges from 10 km to 500 km (the upstream API limits the requested distance to 250 nautical miles). A built-in web interface lets you configure Wi-Fi and the radar center from a phone or computer.
 
-> **Prepared firmware:** v1.6.4 — publication pending  
+> **Latest release:** [v1.6.4](https://github.com/ARDUnia/ARDUnia-Fly-Radar/releases/tag/1.6.4)  
 > **Platform:** ESP8266 / NodeMCU  
 > **Display:** GC9A01, 240 × 240, round TFT
 
@@ -87,7 +87,7 @@ The following are provided by the ESP8266 Arduino core and do not need separate 
 ## Getting started
 
 1. Install the ESP8266 board package and the libraries listed above.
-2. Open `ARDUnia-Fly-Radar.ino` in Arduino IDE.
+2. Open `ARDUnia_Fly_Radar.ino` in Arduino IDE.
 3. Select the correct ESP8266 board and serial port.
 4. Upload the sketch.
 5. On first setup, connect a phone or computer to the Wi-Fi access point named **`ARDUnia-Fly-Radar-Setup`**.
@@ -124,7 +124,7 @@ Change these constants only if you understand the effects on display scaling, AP
 ```text
 ARDUnia-Fly-Radar/
 ├── .gitignore
-├── ARDUnia-Fly-Radar.ino
+├── ARDUnia_Fly_Radar.ino
 ├── LICENSE
 ├── README.md
 └── docs/
@@ -150,7 +150,7 @@ Additional guides:
 - Hides aircraft labels automatically when more than 20 aircraft are within the selected range to reduce clutter.
 - Keeps the existing ESP8266 + GC9A01 hardware platform and web-based Wi-Fi/location setup.
 
-The project maintainer reports that the v1.6.4 firmware was tested successfully on the physical hardware. **The v1.6.4 source file and formal GitHub Release still need to be published**; until then, this repository’s default-branch firmware remains the previously published version. No fresh firmware compilation is claimed here.
+The project maintainer reports that v1.6.4 was tested on physical hardware. The source is available in this repository and the [GitHub Release v1.6.4](https://github.com/ARDUnia/ARDUnia-Fly-Radar/releases/tag/1.6.4) is published. The GitHub Actions workflow checks that the versioned source exists and compiles it for NodeMCU ESP8266; see the live [workflow status](https://github.com/ARDUnia/ARDUnia-Fly-Radar/actions/workflows/esp8266-firmware-check.yml). Hardware testing and automated compilation are separate checks.
 
 ## Troubleshooting
 
