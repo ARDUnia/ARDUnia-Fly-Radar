@@ -34,16 +34,16 @@ ARDUnia Fly Radar retrieves nearby aircraft positions from the ADS-B data servic
 
 ### Start Screen
 
-![Start Screen](docs/images/Start Screen.jpg)
+![Start Screen](docs/images/Start_Screen.jpg)
 
 ### Connected Screen
 
-![Connected Screen](docs/images/Connected Screen.jpg)
+![Connected Screen](docs/images/Connected_Screen.jpg)
 
 
 ### Radar display concept
 
-![Radar display concept](docs/images/Radar Screen.jpg)
+![Radar display concept](docs/images/Radar_Screen.jpg)
 
 This image is a visual concept/reference for the round radar display.
 
